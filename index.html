@@ -12,6 +12,7 @@
 
 <script type="text/javascript">
 
+
 // array of options
  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; 
 
@@ -26,12 +27,15 @@
 
  	//Determines which key was pressed 
  	var userGuess = event.key;
+
  	guessedLetters.push(userGuess);
 
  	//randomly chooses a choice from the array
  	var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 
  	// if user guesses the same as the computer their win goes up one; else their guesses decreases by one; if they lose all their guesses their losses go up one.
+
+if(event.keyCode >= 65 && event.keyCode <= 90) {
 	if (userGuess === computerChoice) {
 			guesses = 10;
 	 		wins++;
@@ -53,9 +57,12 @@
  	 "<p>Losses: " + losses + "</p>" + 
  	 "<p>Guesses Left: " + guesses + "</p>" +
  	 "<p>Your guesses so far: " + guessedLetters.join(', ') + "</p>";
+ 	}
 };
 
 </script>
 	
 </body>
 </html>
+
+
